@@ -15,7 +15,7 @@ function preload(){
 function setup(){
 createCanvas(1900,950)
 createRamp() 
-SuperJorel = createSprite(100,200,50,50);
+SuperJorel = createSprite(910,770,50,50);
 Edges = createEdgeSprites()
 bloquinhoGroup = new Group()
 
@@ -31,13 +31,11 @@ function draw() {
 
   tachovendohamburger()
   bloquinhoGroup.collide(RampGroup)
+
+  SuperJorel.velocityY = SuperJorel.velocityY + 1.3
 }
 
 function controlJorel(){
-  if (keyIsDown(87)) {
-    SuperJorel.y -= 5;
-  }
-
   if (keyIsDown(65)) {
     SuperJorel.x -= 5;
   }
@@ -46,29 +44,43 @@ function controlJorel(){
     SuperJorel.x += 5;
   }
 
-  if (keyIsDown(83)) {
-    SuperJorel.y += 5;
+  if (keyIsDown(32)) {
+    SuperJorel.y -= 30
   }
 }
 function createRamp(){
-  Ramp1 = createSprite(100,200,150,10)
+  Ramp1 = createSprite(400,209,340,10)
   Ramp1.shapeColor = "red"
   Ramp1.rotation = 185
-  Ramp2 = createSprite(250,214,150,10)
+  Ramp2 = createSprite(797,244,500,10)
   Ramp2.shapeColor = "red"
   Ramp2.rotation = 185
-  Ramp3 = createSprite(400,227,150,10)
+  Ramp3 = createSprite(1100,439,390,10)
   Ramp3.shapeColor = "red"
-  Ramp3.rotation = 185
-  Ramp4 = createSprite(550,240,150,10)
+  Ramp3.rotation = 175
+  Ramp4 = createSprite(1540,400,500,10)
   Ramp4.shapeColor = "red"
-  Ramp4.rotation = 185
+  Ramp4.rotation = 175
+  Ramp5 = createSprite(510,600,900,10)
+  Ramp5.shapeColor = "red"
+  Ramp5.rotation = 185
+  Ramp6 = createSprite(910,800,900,10)
+  Ramp6.shapeColor = "red"
+  Ramp6.rotation = 180
+  Ramp7 = createSprite(1350,130,900,10)
+  Ramp7.shapeColor = "red"
+  Ramp7.rotation = 180
  RampGroup = new Group()
  RampGroup.add(Ramp1)
  RampGroup.add(Ramp2)
  RampGroup.add(Ramp3)
  RampGroup.add(Ramp4)
+ RampGroup.add(Ramp5)
+ RampGroup.add(Ramp6)
+ RampGroup.add(Ramp7)
  RampGroup.debug = true
+
+
 }
 
 function tachovendohamburger() {
